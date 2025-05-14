@@ -1,3 +1,3 @@
 # Code Samples
 
-## Those code samples are the one we used for [Benchmarks](../bench)
+Those code samples are the ones we used for [Benchmarks](../bench)
