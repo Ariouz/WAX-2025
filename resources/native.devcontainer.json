@@ -1,0 +1,6 @@
+{
+  "build": { "dockerfile": "native.Dockerfile" },
+  "mounts": [
+    "type=bind,source=${localEnv:userprofile}/.ssh,target=/root/.ssh,readonly"
+  ]
+}
