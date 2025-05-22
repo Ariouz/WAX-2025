@@ -1,0 +1,9 @@
+{
+  "name": "GraalVM GraalPY DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [
+    "source=maven-repo,target=/root/.m2,type=volume"
+  ]
+}

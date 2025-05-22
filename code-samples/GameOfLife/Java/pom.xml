@@ -74,4 +74,25 @@
         </profile>
     </profiles>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>24.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graalvm.polyglot</groupId>
+            <artifactId>python</artifactId> <!-- ① -->
+            <version>24.2.0</version>
+            <type>pom</type> <!-- ② -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.graalvm.python</groupId>
+            <artifactId>python-embedding</artifactId> <!-- ③ -->
+            <version>24.2.0</version>
+        </dependency>
+    </dependencies>
+
 </project>

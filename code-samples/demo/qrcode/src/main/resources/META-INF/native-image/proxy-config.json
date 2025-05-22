@@ -1,0 +1,14 @@
+[
+  {
+    "interfaces": ["org.example.javase.QRCode"]
+  },
+  {
+    "interfaces": ["org.example.javase.IO"]
+  },
+  {
+    "interfaces": ["org.example.javase.BytesIO"]
+  },
+  {
+    "interfaces": ["org.example.javase.PyPNGImage"]
+  }
+]
