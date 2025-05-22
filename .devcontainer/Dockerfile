@@ -1,5 +1,7 @@
 FROM container-registry.oracle.com/graalvm/native-image:latest
 
+RUN microdnf install -y git
+
 # Maven install
 ARG MAVEN_VERSION=3.9.6
 RUN curl -fsSL https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
