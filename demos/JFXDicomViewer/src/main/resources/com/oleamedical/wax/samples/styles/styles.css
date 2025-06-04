@@ -1,0 +1,32 @@
+*.label {
+    -fx-text-fill: #ffffff80;
+}
+
+#top-logo-container {
+    -fx-background-color: #171E25;
+    -fx-padding: 10px;
+}
+
+.root {
+    -fx-background-color: #1E2D3D;
+}
+
+.text {
+    -fx-text-fill: #ffffff80;
+    -fx-text-alignment: center;
+}
+
+.text-orange {
+    -fx-text-fill: #F29111;
+}
+
+*.button {
+    -fx-background-color: #171E25;
+    -fx-text-fill: #F29111;
+}
+
+*.button:hover {
+    -fx-background-color: #16232c;
+    -fx-text-fill: #bb700c;
+    -fx-cursor: pointer;
+}
