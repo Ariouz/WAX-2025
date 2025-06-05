@@ -29,8 +29,6 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class JFXDicomViewer extends Application {
 
-    private File dcmFile = null;
-
     private ViewerController viewerController;
     private SceneController sceneController;
 

@@ -11,8 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <javafx.version>16</javafx.version>
         <dcm4che.version>5.34.0</dcm4che.version>
         <mainClassName>com.oleamedical.wax.samples.JFXDicomViewer</mainClassName>
@@ -69,7 +69,7 @@
             <plugin>
                 <groupId>com.gluonhq</groupId>
                 <artifactId>gluonfx-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.6</version>
                 <configuration>
                     <mainClass>${mainClassName}</mainClass>
                 </configuration>
