@@ -1,0 +1,33 @@
+{
+  "resources":{
+  "includes":[
+    {
+      "pattern":"\\QMETA-INF/services/javax.imageio.spi.ImageReaderSpi\\E"
+    }, 
+    {
+      "pattern":"\\Qcom/oleamedical/wax/samples/olea-logo-square.png\\E"
+    }, 
+    {
+      "pattern":"\\Qcom/oleamedical/wax/samples/olea-logo.png\\E"
+    }, 
+    {
+      "pattern":"\\Qcom/oleamedical/wax/samples/styles/styles.css\\E"
+    }, 
+    {
+      "pattern":"\\Qcom/oleamedical/wax/samples/wax-logo.png\\E"
+    }
+  ]},
+  "bundles":[
+    {
+      "name":"com.sun.javafx.tk.quantum.QuantumMessagesBundle",
+      "locales":[
+        "", 
+        "und"
+      ]
+    }, 
+    {
+      "name":"sun.awt.resources.awt",
+      "classNames":["sun.awt.resources.awt"]
+    }
+  ]
+}

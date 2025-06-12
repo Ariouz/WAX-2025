@@ -27,23 +27,11 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 
-public class JFXDicomViewer extends Application {
+public class JFXDicomViewer {
 
-    private ViewerController viewerController;
-    private SceneController sceneController;
-
-    public void start(Stage stage) throws Exception {
-        sceneController = new SceneController(stage);
-        viewerController = new ViewerController(sceneController);
-        sceneController.createScene(SceneEnum.DICOM_SELECTOR_SCENE);
-        sceneController.createScene(SceneEnum.DICOM_VIEWER_SCENE);
-
-        sceneController.openScene(SceneEnum.DICOM_SELECTOR_SCENE, viewerController);
-        stage.show();
-    }
 
     public static void main(String[] args) {
-        launch(args);
+        Launcher.main(args);
     }
 
 
