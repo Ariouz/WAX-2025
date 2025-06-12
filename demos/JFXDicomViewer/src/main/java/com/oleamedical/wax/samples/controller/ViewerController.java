@@ -28,6 +28,7 @@ public class ViewerController {
     }
 
     public boolean setDicomSeries(File dir) {
+        dicomSeries.clear();
         if (dir == null || !dir.isDirectory()) return false;
 
         File[] seriesFiles = dir.listFiles(file -> file.getName().endsWith(".dcm"));
