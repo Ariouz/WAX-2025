@@ -9,10 +9,16 @@
 
     <div class="content">
         <form action="" method="post" enctype="multipart/form-data" id="form">
-            <label for="dcmFile">Dicom File</label>
-            <input type="file" id="dcmFile" name="dcmFile" accept="application/dicom">
+            <span class="select-dcm">Select Dicom file</span>
+            <label class="dcmFileInput" for="dcmFile">
+                <div>
+                    <span class="browse">Browse</span> <span class="or">or</span> <span class="drag-drop">Drag and Drop</span>
+                </div>
+            </label>
+            <input type="file" id="dcmFile" name="dcmFile" accept=".dcm">
 
-            <button type="submit">Segment</button>
+            <span class="selected-file" id="selected-file"></span>
+            <button type="submit" class="segment_button">Segment</button>
         </form>
     </div>
 
@@ -26,6 +32,7 @@
 
     <script>
         handleDcmFileUploadForm();
+        handleFileInput();
         hideLoader();
     </script>
 

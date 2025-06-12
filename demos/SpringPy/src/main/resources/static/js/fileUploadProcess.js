@@ -1,3 +1,12 @@
+function handleFileInput()
+{
+    let input = document.getElementById("dcmFile");
+    let selectFileSpan = document.getElementById("selected-file");
+    input.addEventListener("input", (e) => {
+        selectFileSpan.innerText = `Selected File: ${e.target.files[0].name}`;
+    })
+}
+
 function handleDcmFileUploadForm() {
     let form = document.getElementById('form');
     form.addEventListener('submit', async (e) => {
