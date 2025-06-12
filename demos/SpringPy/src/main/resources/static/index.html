@@ -7,5 +7,28 @@
 </head>
 <body>
 
+    <div class="content">
+        <form action="" method="post" enctype="multipart/form-data" id="form">
+            <label for="dcmFile">Dicom File</label>
+            <input type="file" id="dcmFile" name="dcmFile" accept="application/dicom">
+
+            <button type="submit">Segment</button>
+        </form>
+    </div>
+
+    <div class="loader_container" id="loader_container">
+        <div class="loader_overlay" id="loader_overlay"></div>
+        <div class="loader" id="loader"></div>
+    </div>
+
+    <script src="js/fileUploadProcess.js"></script>
+    <script src="js/loader.js"></script>
+
+    <script>
+        handleDcmFileUploadForm();
+        hideLoader();
+    </script>
+
+
 </body>
 </html>
