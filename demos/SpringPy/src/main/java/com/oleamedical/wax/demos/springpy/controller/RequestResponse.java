@@ -1,12 +1,21 @@
 package com.oleamedical.wax.demos.springpy.controller;
 
-public record RequestResponse(String status, String message) {
+public class RequestResponse {
+    private String status;
+    private String message;
+    private Object data;
 
-    private static Object data;
-
-    public RequestResponse data(Object data) {
-        RequestResponse.data = data;
-        return this;
+    public RequestResponse(String status, String message) {
+        this.status = status;
+        this.message = message;
     }
 
+    public String getStatus() { return status; }
+    public String getMessage() { return message; }
+    public Object getData() { return data; }
+
+    public RequestResponse setData(Object data) {
+        this.data = data;
+        return this;
+    }
 }

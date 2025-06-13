@@ -10,8 +10,6 @@
 body {
     background-color: var(--bg-black);
     color: mintcream;
-    overflow: hidden;
-
 }
 
 .loader {
@@ -54,20 +52,20 @@ body {
 }
 
 
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .content {
     width: 80%;
     margin: 20vh auto auto;
     background-color: #252525;
     padding: 40px 20px;
     border-radius: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     box-shadow: 2px 2px 10px black;
-}
-
-#form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,4 +134,12 @@ body {
     transform: scale(1.05);
     background-color: var(--green);
     color: var(--bg-black);
+}
+
+#segmented-image {
+    max-width: 50%;
+    height: auto;
+    margin: 50px auto auto auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }

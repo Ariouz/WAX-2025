@@ -1,4 +1,7 @@
 package com.oleamedical.wax.demos.springpy.python;
 
-public class BrainSegmentation {
+public interface BrainSegmentation {
+
+    int[] segment(int[] fileData);
+
 }

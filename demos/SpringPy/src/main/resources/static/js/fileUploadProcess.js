@@ -1,6 +1,7 @@
 function handleFileInput()
 {
     let input = document.getElementById("dcmFile");
+
     let selectFileSpan = document.getElementById("selected-file");
     input.addEventListener("input", (e) => {
         selectFileSpan.innerText = `Selected File: ${e.target.files[0].name}`;
@@ -12,14 +13,14 @@ function handleDcmFileUploadForm() {
     form.addEventListener('submit', async (e) => {
         showLoader();
         e.preventDefault();
-        let data = await fetchSegmentedDicomFile(new FormData(form));
+
+        let imageUrl = await fetchSegmentedDicomFile(new FormData(form));
         hideLoader();
-        if (!data.success) {
-            console.log(data.message);
-            return ;
+        if (imageUrl) {
+            document.getElementById("segmented-image").src = imageUrl;
+            document.getElementById("segmented-image").style.opacity = "1";
         }
 
-        console.log(data.message);
     })
 }
 
@@ -34,6 +35,7 @@ async function fetchSegmentedDicomFile(formData) {
 
     if (!data.ok) return null;
 
+    let blob = await data.blob();
 
-    return data.json();
+    return imageUrl = URL.createObjectURL(blob);
 }

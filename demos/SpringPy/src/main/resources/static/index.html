@@ -9,18 +9,20 @@
 
     <div class="content">
         <form action="" method="post" enctype="multipart/form-data" id="form">
-            <span class="select-dcm">Select Dicom file</span>
+            <span class="select-dcm">Select png file</span>
             <label class="dcmFileInput" for="dcmFile">
                 <div>
                     <span class="browse">Browse</span> <span class="or">or</span> <span class="drag-drop">Drag and Drop</span>
                 </div>
             </label>
-            <input type="file" id="dcmFile" name="dcmFile" accept=".dcm">
-
+            <input type="file" id="dcmFile" name="dcmFile" accept=".png">
             <span class="selected-file" id="selected-file"></span>
             <button type="submit" class="segment_button">Segment</button>
         </form>
+
+        <img src="" alt="" id="segmented-image">
     </div>
+
 
     <div class="loader_container" id="loader_container">
         <div class="loader_overlay" id="loader_overlay"></div>
