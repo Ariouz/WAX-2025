@@ -1,12 +1,13 @@
 import random
 import time
 import os
+import numpy as np
+import matplotlib.pyplot as plt
 
 grid_size = int(os.getenv("GRID_SIZE"))
 grid = [[random.randrange(0, 2) == 1 for _ in range(grid_size)] for _ in range(grid_size)]
 
 iterations = int(os.getenv("ITERATIONS"))
-
 
 def get_alive_neighbors(x, y):
     alive = 0
@@ -52,6 +53,9 @@ if __name__ == "__main__":
         iterate()
 
     end = time.time()
+    H = np.array(grid)
+    plt.imshow(H, interpolation="none")
+    plt.savefig("gol.png")
     print(f"Total time: {int((end - start) * 1000)} ms")
     print(f"Total iterations: {iterations}")
     print(f"Grid size: {grid_size}")

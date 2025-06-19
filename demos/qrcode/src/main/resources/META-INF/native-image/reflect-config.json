@@ -675,7 +675,7 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
-  "name":"org.example.javase.QRCode"
+  "name":"com.oleamedical.wax.demos.qrcode.QRCode"
 },
 {
   "name":"org.graalvm.home.impl.DefaultHomeFinder"

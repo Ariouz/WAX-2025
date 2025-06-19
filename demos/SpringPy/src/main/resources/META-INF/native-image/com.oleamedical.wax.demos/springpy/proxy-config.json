@@ -1,0 +1,7 @@
+[
+  {
+    "interfaces": [
+      "com.oleamedical.wax.demos.springpy.python.BrainSegmentation"
+    ]
+  }
+]

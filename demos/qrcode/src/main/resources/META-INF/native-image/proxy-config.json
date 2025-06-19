@@ -1,14 +1,14 @@
 [
   {
-    "interfaces": ["org.example.javase.QRCode"]
+    "interfaces": ["com.oleamedical.wax.demos.qrcode.QRCode"]
   },
   {
-    "interfaces": ["org.example.javase.IO"]
+    "interfaces": ["com.oleamedical.wax.demos.qrcode.IO"]
   },
   {
-    "interfaces": ["org.example.javase.BytesIO"]
+    "interfaces": ["com.oleamedical.wax.demos.qrcode.BytesIO"]
   },
   {
-    "interfaces": ["org.example.javase.PyPNGImage"]
+    "interfaces": ["com.oleamedical.wax.demos.qrcode.PyPNGImage"]
   }
 ]

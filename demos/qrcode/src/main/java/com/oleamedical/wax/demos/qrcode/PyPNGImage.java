@@ -1,4 +1,4 @@
-package org.example.javase;
+package com.oleamedical.wax.demos.qrcode;
 
 interface PyPNGImage {
     void save(BytesIO bio);

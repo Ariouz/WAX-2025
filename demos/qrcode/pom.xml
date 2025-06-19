@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>javase</artifactId>
+    <artifactId>qrcode</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>javase</name>
+    <name>qrcode</name>
 
     <properties>
         <maven.compiler.target>21</maven.compiler.target>
@@ -46,7 +46,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.example.javase.App</mainClass>
+                            <mainClass>com.oleamedical.wax.demos.qrcode.App</mainClass>
                             <addClasspath>true</addClasspath>
                         </manifest>
                     </archive>
@@ -104,7 +104,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <mainClass>org.example.javase.App</mainClass>
+                            <mainClass>com.oleamedical.wax.demos.qrcode.App</mainClass>
                         </configuration>
                     </plugin>
                 </plugins>

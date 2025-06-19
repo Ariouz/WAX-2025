@@ -1,3 +1,7 @@
+src/main/resources/python/
+src/main/resources/__pycache__/
+external/
+
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar

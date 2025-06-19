@@ -17,10 +17,11 @@ function handleDcmFileUploadForm() {
         let imageUrl = await fetchSegmentedDicomFile(new FormData(form));
         hideLoader();
         if (imageUrl) {
-            document.getElementById("segmented-image").src = imageUrl;
-            document.getElementById("segmented-image").style.opacity = "1";
+            let segmentedImage = document.getElementById("segmented-image");
+            segmentedImage.src = imageUrl;
+            segmentedImage.style.opacity = "1";
+            setTimeout(() => { segmentedImage.scrollIntoView(); }, 100);
         }
-
     })
 }
 

@@ -12,6 +12,8 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Iterator;
 
 public class PythonController {
@@ -22,7 +24,7 @@ public class PythonController {
 
     private BrainSegmentation brainSegmentation;
 
-    public PythonController() {
+    public PythonController() throws URISyntaxException {
         String pythonPath = "target/classes/org.graalvm.python.vfs/venv/lib/python3.11/site-packages";
 
         this.context = Context.newBuilder("python")
@@ -35,19 +37,25 @@ public class PythonController {
                 .allowNativeAccess(true)
                 .allowCreateProcess(true)
                 .allowCreateThread(true)
+                .option("python.Executable", "")
+                .option("python.ForceImportSite", "true")
                 .option("python.PythonPath", pythonPath)
                 .option("python.WarnExperimentalFeatures", "false")
                 .build();
 
+        System.out.println("Initializing Python context");
         this.context.initialize(PYTHON);
-        this.context.eval(PYTHON, "import sys; print(sys.path)");
-        this.context.eval(PYTHON, "sys.setrecursionlimit(2000)");
+        //this.context.eval(PYTHON, "import sys; print(sys.path)");
 
-        //evalFile("unet_model.py");
+        long start = System.currentTimeMillis();
+
+        System.out.println("Loading brain_segmentation.py");
         evalFile("brain_segmentation.py");
         this.brainSegmentation = context.eval(PYTHON, "BrainSegmentation()").as(BrainSegmentation.class);
-    }
 
+        System.out.println("Loaded context in " + (System.currentTimeMillis() - start) + "ms");i
+    }
+    :x
     public void evalFile(String filename) {
         File sourceFile = null;
         try {
@@ -66,7 +74,7 @@ public class PythonController {
     public static int[] toUnsignedBytes(byte[] data) {
         int[] unsigned = new int[data.length];
         for (int i = 0; i < data.length; i++) {
-            unsigned[i] = data[i] & 0xFF; // convert signed byte to 0-255
+            unsigned[i] = data[i] & 0xFF;
         }
         return unsigned;
     }
@@ -108,10 +116,24 @@ public class PythonController {
         if (resource == null) {
             throw new IllegalArgumentException("file not found! " + fileName);
         } else {
-
-            return new File(resource.toURI());
+            return readResourceStream(fileName);
         }
 
+    }
+
+    private File readResourceStream(String fileName) {
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (is == null) throw new IllegalArgumentException("file not found! " + fileName);
+
+            File tempFile = File.createTempFile("resource-", "-" + fileName);
+            tempFile.deleteOnExit();
+            OutputStream os = new FileOutputStream(tempFile);
+            is.transferTo(os);
+
+            return tempFile;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

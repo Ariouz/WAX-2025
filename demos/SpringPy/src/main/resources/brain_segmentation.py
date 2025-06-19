@@ -13,15 +13,9 @@ class BrainSegmentation:
         self.model = self.get_model()
 
     def get_model(self):
-        #model = UNet(in_channels=3, out_channels=1, init_features=32)
-        print("loading model")
-        print(os.listdir())
-        model_path = "."
-        #model_path = "src/main/resources"
-        print(model_path)
-        print(os.listdir(model_path))
-        model = torch.jit.load(os.path.join(model_path, "unet_scripted.pt"), map_location="cpu")
-        print("model loaded")
+        print("Loading model")
+        model = torch.jit.load(os.path.join(".", "unet_scripted.pt"), map_location="cpu")
+        print("Model loaded")
         model.eval()
         return model
 

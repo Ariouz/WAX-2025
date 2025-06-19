@@ -1,4 +1,4 @@
-package org.example.javase;
+package com.oleamedical.wax.demos.qrcode;
 
 import org.graalvm.polyglot.io.ByteSequence;
 

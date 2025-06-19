@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: org.example.javase.App
+Main-Class: com.oleamedical.wax.demos.qrcode.App
